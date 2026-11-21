@@ -5,16 +5,6 @@
 **UC-08 : Analyse des données et visualisation**  
 **UC-07 : Architecture Azure**
 
-## Introduction
-
-Dans ce quatrième TP, j'ai travaillé sur les données TPCx-BB fournies avec le projet Retail Intelligence Platform.
-
-Le but était de réutiliser les données pour calculer des indicateurs, faire des graphiques et comprendre comment on peut organiser les données dans un Data Lake sur Azure.
-
-J'ai commencé par travailler sur les fichiers avec PySpark dans JupyterLab, puis j'ai réalisé les analyses et les visualisations. Ensuite, j'ai utilisé Azure pour créer les zones Bronze, Silver et Gold et tester le stockage d'un fichier.
-
-Comme c'était ma première fois avec plusieurs de ces outils, j'ai avancé étape par étape pour comprendre leur fonctionnement.
-
 ## 1. Environnement de travail
 
 ### 1.1 Docker et JupyterLab
@@ -285,7 +275,6 @@ Ensuite, quatre produits ressortent clairement du classement des ventes. Il sera
 
 Enfin, le graphique mensuel montre une forte chute en décembre 2005. Cette valeur mérite une vérification avant d'être interprétée.
 
-Il faut aussi rappeler que les données TPCx-BB sont **synthétiques**. Ces résultats permettent de s'entraîner à l'analyse, mais ne représentent pas les ventes réelles d'une entreprise.
 
 ## 3. UC-07 – Architecture Azure
 
@@ -482,18 +471,6 @@ Avec les outils open source, il faut souvent installer et relier plusieurs compo
 
 Par exemple, Iceberg ne remplace pas à lui seul Synapse. Iceberg sert à gérer les tables et leurs métadonnées, tandis que Spark réalise les calculs et que Trino ou Spark SQL servent aux requêtes.
 
-### 3.8 Limites et coûts Azure
-
-Pour ce TP, j'ai limité l'utilisation réelle d'Azure au stockage ADLS Gen2 et au test d'un fichier.
-
-Je n'ai pas lancé de traitements Spark sur Azure et je n'ai pas déployé Data Factory ou Synapse.
-
-Ces services peuvent entraîner des coûts selon leur utilisation.
-
-Même avec un compte étudiant, il faut surveiller les crédits disponibles, les ressources créées et les éventuelles opérations facturées.
-
-Le choix de réaliser les traitements dans Docker permettait de travailler sur les données sans déployer toute une architecture cloud.
-
 ## 4. Difficultés rencontrées
 
 J'ai rencontré plusieurs difficultés pendant le TP.
@@ -508,22 +485,3 @@ Sur Azure, j'ai eu des difficultés à retrouver certains menus, notamment Confi
 
 J'ai donc réalisé les manipulations progressivement pour vérifier que chaque étape fonctionnait.
 
-Enfin, pour publier le projet sur GitHub, j'ai utilisé Git depuis le terminal JupyterLab. J'ai dû configurer mon identité Git et régler l'authentification avant de réussir à envoyer les fichiers.
-
-## Conclusion
-
-Ce TP4 m'a permis de mieux comprendre les différentes étapes d'un projet Data.
-
-Avec PySpark, j'ai chargé les données TPCx-BB, préparé les données Silver et Gold, calculé des indicateurs et réalisé trois graphiques.
-
-L'analyse des résultats m'a permis de comparer les magasins, d'observer les ventes dans le temps et d'identifier les produits avec les montants les plus élevés.
-
-J'ai aussi découvert une partie plus technique avec Docker, JupyterLab et Azure ADLS Gen2.
-
-La manipulation Azure m'a permis de comprendre concrètement l'organisation Bronze, Silver et Gold et de tester le dépôt d'un fichier dans un Data Lake.
-
-Tous les services Azure n'ont pas été déployés, mais j'ai pu comprendre leur rôle et la différence entre les traitements réalisés localement et ceux qui pourraient être automatisés dans le cloud.
-
-Ce TP m'a surtout appris à vérifier les données avant de les analyser et à ne pas tirer de conclusions trop rapidement à partir d'un graphique.
-
-Le fichier `tp4.ipynb` contient le code et les résultats, tandis que ce rapport présente les manipulations, les analyses et les difficultés rencontrées.
